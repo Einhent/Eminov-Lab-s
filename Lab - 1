@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cmath>
+
+#define PI 3.14159265
+#define e 2.7
+using namespace std;
+
+double f(double x)
+{
+	return 2 * pow(e, x) - 2 * x - 3;
+}
+
+int main()
+{
+	float sigma = 0.01;
+	double a, b;
+	cin >> a;
+	cin >> b;
+	double c;
+	while (abs(b - a) > sigma)
+	{
+		c = (a + b) / 2;
+		if ((f(c) > 0 && f(a) > 0 || (f(c) < 0 && f(a) < 0)))
+		{
+			a = c;
+		}
+		else
+		{
+			b = c;
+		}
+	}
+			cout << "Root: " << (a + b) / 2;
+			cout << "function: " << f;
+			return 0;
+	
+}
