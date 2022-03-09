@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+double f(double x)
+{
+	return x * pow((x + 1), 2) - 1;
+}
+
+int main()
+{
+	float sigma = 0.001;
+	double a, b;
+	cin >> a;
+	cin >> b;
+	while (abs(b - a) > sigma)
+	{
+		a = b;
+		b = f(a);
+	}
+	cout << b << endl;
+	cout << f;
+}
+	
